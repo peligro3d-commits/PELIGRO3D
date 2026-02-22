@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<title>PELIGRO 3D</title>
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="menu-icon" onclick="toggleMenu()" id="icono">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<div class="menu" id="menu">
+    <a href="javascript:void(0)" class="close-menu" onclick="irInicio()">Inicio</a>
+
+    <div class="submenu">
+    <a href="javascript:void(0)">Productos ▾</a>
+        <div class="submenu-contenido">
+            <a href="#" onclick="mostrarProductos('hogar')">Hogar</a>
+            <a href="#" onclick="mostrarProductos('estudiante')">Estudiante</a>
+            <a href="#" onclick="mostrarProductos('repuestos')">Repuestos</a>
+            <a href="#" onclick="mostrarProductos('juguetes')">Juguetes</a>
+        </div>
+    </div>
+
+    <a href="#contacto" class="close-menu" onclick="irContacto()">Contacto</a>
+    <a href="#materiales" class="close-menu" >Materiales</a>
+    <a href="#" class="close-menu" >Ayuda</a>
+</div>
+
+<header>
+    <h1 class="logo-texto">
+    <span class="logo-link" onclick="irInicio()">PELIGRO 3D</span>
+</h1>
+    <img src="imagenes/logo.png" class="logo-header">
+</header>
+
+<div class="carrusel-container" id="carrusel-container">
+    <div class="carrusel" id="carrusel">
+        <img src="imagenes/slide1.webp">
+        <img src="imagenes/slide2.jpeg">
+        <img src="imagenes/slide3.webp">
+    </div>
+
+    <button class="btn btn-prev" onclick="moverCarrusel(-1)">❮</button>
+    <button class="btn btn-next" onclick="moverCarrusel(1)">❯</button>
+</div>
+
+<h2 class="titulo-destacados">Productos Destacados</h2>
+
+<section class="productos" id="contenedor-productos"></section>
+
+<!-- MODAL -->
+<div class="modal" id="modal" onclick="cerrarModal()">
+
+    <div class="modal-contenido" onclick="event.stopPropagation()">
+
+        <span class="cerrar" onclick="cerrarModal()">×</span>
+
+        <!-- LADO NEGRO -->
+        <div class="modal-img-container">
+            <img id="modal-img" src="">
+        </div>
+
+        <!-- LADO AMARILLO -->
+        <div class="modal-info">
+            <h2 id="modal-titulo"></h2>
+            <p id="modal-precio" class="modal-precio"></p>
+<p id="modal-descripcion" class="modal-descripcion"></p>
+<p id="modal-codigo" class="modal-codigo"></p>
+
+            <a href="#" class="btn-whatsapp">
+                <img src="imagenes/wpp-amarillo.png" class="icono-btn">
+                Consultanos
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/main.js"></script>
+
+<section class="sobre">
+    <h2>Sobre Nosotros</h2>
+    <p>
+        En PELIGRO 3D diseñamos e imprimimos productos personalizados con precisión técnica.
+        Combinamos ingeniería y creatividad para ofrecer piezas funcionales, resistentes y únicas.
+    </p>
+</section>
+
+<section id="contacto" class="contacto">
+
+    <div class="contacto-wrapper">
+
+        <div class="contacto-info">
+            <h2>Hablemos</h2>
+            <p class="contacto-texto">
+                ¿Tenés una idea o necesitás una impresión 3D personalizada?
+                Escribinos y te respondemos lo antes posible.
+            </p>
+
+            <div class="contacto-datos">
+
+                <a href="https://instagram.com" target="_blank" class="contacto-item">
+                    <img src="imagenes/ig.png">
+                    <span>@peligro3d</span>
+                </a>
+
+                <a href="mailto:peligro3d@gmail.com" class="contacto-item">
+                    <img src="imagenes/mail.png">
+                    <span>peligro3d@gmail.com</span>
+                </a>
+
+            </div>
+        </div>
+
+        <div class="contacto-visual">
+            <div class="contacto-card">
+                <h3>Atención personalizada</h3>
+                <p>Respondemos consultas de lunes a viernes.</p>
+                <p class="horario">9:00hs — 18:00hs</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="copy">
+        © 2026 Peligro 3D — Todos los derechos reservados
+    </div>
+
+</section>
+
+<a href="https://wa.me/5493413563549?text=Hola!%20Quiero%20hacer%20una%20consulta%20sobre%20impresion%203D"
+   class="wpp-flotante"
+   id="wppBtn"
+   target="_blank">
+
+   <img src="imagenes/wpp-negro.png" id="wppIcon">
+</a>
+
+
+
+</body>
+</html>
