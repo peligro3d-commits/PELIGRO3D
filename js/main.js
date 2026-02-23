@@ -16,59 +16,7 @@ const productos = [
 
 {nombre:"Figura Articulada", imagenes:["imagenes/producto7.jpg"], descripcion:"Juguete impreso en 3D.", categoria:"juguetes", precio:9000, codigo:"0007"},
 
-{nombre:"Auto Miniatura", imagenes:["imagenes/producto8.jpg"], descripcion:"Modelo coleccionable.", categoria:"juguetes", precio:11000, codigo:"0008"},
-
-{nombre:"Lapicero 3D", imagenes:["imagenes/producto3.png"], descripcion:"Perfecto para estudiantes.", categoria:"estudiante", precio:6000, codigo:"0003", destacado:true},
-
-{nombre:"Regla Técnica", imagenes:["imagenes/producto4.jpg"], descripcion:"Accesorio útil.", categoria:"estudiante", precio:4500, codigo:"0004"},
-
-{nombre:"Engranaje Repuesto", imagenes:["imagenes/producto5.jpg"], descripcion:"Repuesto técnico.", categoria:"repuestos", precio:15000, codigo:"0005"},
-
-{nombre:"Piñón Técnico", imagenes:["imagenes/producto6.jpg"], descripcion:"Alta resistencia.", categoria:"repuestos", precio:22000, codigo:"0006"},
-
-{nombre:"Figura Articulada", imagenes:["imagenes/producto7.jpg"], descripcion:"Juguete impreso en 3D.", categoria:"juguetes", precio:9000, codigo:"0007"},
-
-{nombre:"Auto Miniatura", imagenes:["imagenes/producto8.jpg"], descripcion:"Modelo coleccionable.", categoria:"juguetes", precio:11000, codigo:"0008"},
-
-{nombre:"Regla Técnica", imagenes:["imagenes/producto4.jpg"], descripcion:"Accesorio útil.", categoria:"estudiante", precio:4500, codigo:"0004"},
-
-{nombre:"Engranaje Repuesto", imagenes:["imagenes/producto5.jpg"], descripcion:"Repuesto técnico.", categoria:"repuestos", precio:15000, codigo:"0005"},
-
-{nombre:"Piñón Técnico", imagenes:["imagenes/producto6.jpg"], descripcion:"Alta resistencia.", categoria:"repuestos", precio:22000, codigo:"0006"},
-
-{nombre:"Figura Articulada", imagenes:["imagenes/producto7.jpg"], descripcion:"Juguete impreso en 3D.", categoria:"juguetes", precio:9000, codigo:"0007"},
-
-{nombre:"Regla Técnica", imagenes:["imagenes/producto4.jpg"], descripcion:"Accesorio útil.", categoria:"estudiante", precio:4500, codigo:"0004"},
-
-{nombre:"Engranaje Repuesto", imagenes:["imagenes/producto5.jpg"], descripcion:"Repuesto técnico.", categoria:"repuestos", precio:15000, codigo:"0005"},
-
-{nombre:"Piñón Técnico", imagenes:["imagenes/producto6.jpg"], descripcion:"Alta resistencia.", categoria:"repuestos", precio:22000, codigo:"0006"},
-
-{nombre:"Figura Articulada", imagenes:["imagenes/producto7.jpg"], descripcion:"Juguete impreso en 3D.", categoria:"juguetes", precio:9000, codigo:"0007"},
-
-{nombre:"Regla Técnica", imagenes:["imagenes/producto4.jpg"], descripcion:"Accesorio útil.", categoria:"estudiante", precio:4500, codigo:"0004"},
-
-{nombre:"Engranaje Repuesto", imagenes:["imagenes/producto5.jpg"], descripcion:"Repuesto técnico.", categoria:"repuestos", precio:15000, codigo:"0005"},
-
-{nombre:"Piñón Técnico", imagenes:["imagenes/producto6.jpg"], descripcion:"Alta resistencia.", categoria:"repuestos", precio:22000, codigo:"0006"},
-
-{nombre:"Figura Articulada", imagenes:["imagenes/producto7.jpg"], descripcion:"Juguete impreso en 3D.", categoria:"juguetes", precio:9000, codigo:"0007"},
-
-{nombre:"Regla Técnica", imagenes:["imagenes/producto4.jpg"], descripcion:"Accesorio útil.", categoria:"estudiante", precio:4500, codigo:"0004"},
-
-{nombre:"Engranaje Repuesto", imagenes:["imagenes/producto5.jpg"], descripcion:"Repuesto técnico.", categoria:"repuestos", precio:15000, codigo:"0005"},
-
-{nombre:"Piñón Técnico", imagenes:["imagenes/producto6.jpg"], descripcion:"Alta resistencia.", categoria:"repuestos", precio:22000, codigo:"0006"},
-
-{nombre:"Figura Articulada", imagenes:["imagenes/producto7.jpg"], descripcion:"Juguete impreso en 3D.", categoria:"juguetes", precio:9000, codigo:"0007"},
-
-{nombre:"Regla Técnica", imagenes:["imagenes/producto4.jpg"], descripcion:"Accesorio útil.", categoria:"estudiante", precio:4500, codigo:"0004"},
-
-{nombre:"Engranaje Repuesto", imagenes:["imagenes/producto5.jpg"], descripcion:"Repuesto técnico.", categoria:"repuestos", precio:15000, codigo:"0005"},
-
-{nombre:"Piñón Técnico", imagenes:["imagenes/producto6.jpg"], descripcion:"Alta resistencia.", categoria:"repuestos", precio:22000, codigo:"0006"},
-
-{nombre:"Figura Articulada", imagenes:["imagenes/producto7.jpg"], descripcion:"Juguete impreso en 3D.", categoria:"juguetes", precio:9000, codigo:"0007"},
+{nombre:"Auto Miniatura", imagenes:["imagenes/producto8.jpg"], descripcion:"Modelo coleccionable.", categoria:"juguetes", precio:11000, codigo:"0008"}
 
 ];
 
@@ -214,31 +162,14 @@ function toggleMenu(){
 
     const menu = document.getElementById("menu");
     const icono = document.getElementById("icono");
-    const header = document.querySelector("header");
-
-    if(!menu || !icono || !header) return;
 
     const abierto = menu.classList.contains("abierto");
 
     if(abierto){
-        // CERRAMOS MENÚ
-        menu.classList.remove("abierto");
-        icono.classList.remove("abierto");
-
-        // 🔑 REEVALUAMOS FONDO REAL
-        const headerBottom = header.getBoundingClientRect().bottom;
-
-        if(headerBottom <= 0){
-            icono.classList.add("scrolled");   // fondo negro → icono amarillo
-        }else{
-            icono.classList.remove("scrolled"); // fondo amarillo → icono negro
-        }
-
+        cerrarMenuCompleto();
     }else{
-        // ABRIMOS MENÚ
         menu.classList.add("abierto");
         icono.classList.add("abierto");
-        icono.classList.remove("scrolled"); // el menú manda
     }
 }
 
@@ -272,12 +203,6 @@ document.addEventListener("DOMContentLoaded", function(){
     const menu = document.getElementById("menu");
     const icono = document.getElementById("icono");
 
-    if(menu && icono){
-        menu.addEventListener("mouseleave", function(){
-        menu.classList.remove("abierto");
-        icono.classList.remove("abierto");
-    });
-    }
 
     setInterval(() => {
         moverCarrusel(1);
@@ -378,26 +303,9 @@ window.addEventListener("scroll", function(){
 
 document.querySelectorAll(".close-menu").forEach(link => {
 
-    link.addEventListener("click", () => {
-
-        const menu = document.getElementById("menu");
-        const icono = document.getElementById("icono");
-        const header = document.querySelector("header");
-
-        if(!menu || !icono || !header) return;
-
-        menu.classList.remove("abierto");
-        icono.classList.remove("abierto");
-
-        // Recalcular color correcto del icono
-        const headerBottom = header.getBoundingClientRect().bottom;
-
-        if(headerBottom <= 0){
-            icono.classList.add("scrolled");
-        }else{
-            icono.classList.remove("scrolled");
-        }
-    });
+   link.addEventListener("click", () => {
+    cerrarMenuCompleto();
+});
 
 });
 
@@ -427,10 +335,10 @@ function seleccionarCategoria(categoria){
     mostrarProductos(categoria);
 
     // Cerrar submenu
-    const submenus = document.querySelectorAll(".submenu");
-    submenus.forEach(sub => {
-        sub.classList.remove("submenu-activo");
-    });
+    function seleccionarCategoria(categoria){
+    mostrarProductos(categoria);
+    cerrarMenuCompleto();
+}
 
     // Cerrar menu
     const menu = document.getElementById("menu");
