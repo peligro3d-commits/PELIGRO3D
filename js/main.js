@@ -61,13 +61,6 @@ if(contacto){
         contenedor.appendChild(div);
     });
 
-    const menu = document.getElementById("menu");
-const icono = document.getElementById("icono");
-
-if(menu && icono){
-    menu.classList.remove("abierto");
-    icono.classList.remove("abierto");
-}
 }
 
 // ================= INICIO =================
@@ -163,6 +156,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 function abrirModal(nombre, imagen, descripcion, precio, codigo){
 
+    document.getElementById("wppBtn").style.display = "none";
     const modal = document.getElementById("modal");
     const titulo = document.getElementById("modal-titulo");
     const img = document.getElementById("modal-img");
@@ -196,8 +190,16 @@ function actualizarBotonWhatsapp(){
     const icono = document.getElementById("wppIcon");
     const contacto = document.getElementById("contacto");
 
-    if(!boton || !icono || !contacto) return;
+    if(!boton || !icono) return;
 
+    // 🔑 Si NO estamos en inicio → siempre amarillo
+    if(!contacto || contacto.style.display === "none"){
+        boton.style.background = "#FFD400";
+        icono.src = "imagenes/wpp-negro.png";
+        return;
+    }
+
+    // 🔑 Solo en INICIO evaluamos el contacto
     const rect = contacto.getBoundingClientRect();
 
     if(rect.top < window.innerHeight && rect.bottom >= 0){
