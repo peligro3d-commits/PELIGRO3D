@@ -630,3 +630,199 @@ header h1{
     display: inline;
     cursor: pointer;
 }
+
+
+
+/* ================= MODO CELULAR ================= */
+@media (max-width: 768px){
+
+    /* HEADER */
+    header h1{
+        font-size:36px;
+        letter-spacing:2px;
+    }
+
+    .logo-header{
+        height:80px;
+        right:10px;
+    }
+
+    /* CARRUSEL */
+    .carrusel-container{
+        width:95%;
+        margin:30px auto;
+    }
+
+    .carrusel img{
+        height:220px;
+    }
+
+    .btn{
+        padding:6px 10px;
+        font-size:16px;
+    }
+
+    /* PRODUCTOS */
+    .productos{
+        grid-template-columns:repeat(2,1fr);
+        gap:15px;
+        margin-bottom:60px;
+    }
+
+    .producto img{
+        height:140px;
+    }
+
+     /* PRODUCTO */
+    .producto:hover{
+        transform:none; /* hover molesta en touch */
+    }
+
+    .producto img{
+        height:140px;
+    }
+
+    .producto h3{
+        font-size:16px;
+    }
+
+    .precio{
+        font-size:16px;
+    }
+
+    /* MODAL */
+    .modal-contenido{
+        flex-direction:column;
+        width:90vw;
+        height:auto;
+        max-height:none;
+    }
+
+    .modal-img-container{
+        width:100%;
+        height:200px;
+    }
+
+    #modal-img{
+        height:100%;
+    }
+
+    .modal-info{
+        width:100%;
+        grid-template-areas:
+            "titulo"
+            "descripcion"
+            "codigo"
+            "precio"
+            "boton";
+        grid-template-columns:1fr;
+        gap:15px;
+        padding:20px;
+    }
+
+    .modal-precio{
+        justify-self:start;
+        font-size:24px;
+    }
+
+    .cerrar{
+        font-size:32px;
+        right:15px;
+    }
+
+    /* SOBRE */
+    .sobre{
+        width:90%;
+        margin:50px auto;
+    }
+
+    .sobre h2{
+        font-size:28px;
+    }
+
+    .sobre p{
+        font-size:16px;
+    }
+
+    /* WHATSAPP */
+    .wpp-flotante{
+        width:45px;
+        height:45px;
+        bottom:15px;
+        right:15px;
+    }
+    /* ===== MATERIALES ===== */
+    .materiales{
+        padding:60px 8%;
+        background-attachment:scroll; /* fixed rompe en mobile */
+    }
+
+    .material-contenedor{
+        gap:50px;
+    }
+
+    .material-texto h2{
+        font-size:28px;
+    }
+
+    .material-texto p{
+        font-size:16px;
+        max-width:100%;
+    }
+
+    .material-img img{
+        width:100%;
+        max-width:260px;
+    }
+
+    /* ===== CONTACTO ===== */
+    .contacto{
+        padding:80px 8%;
+    }
+
+    .contacto-wrapper{
+        flex-direction:column;
+        gap:50px;
+    }
+
+    .contacto-info h2{
+        font-size:32px;
+        text-align:center;
+    }
+
+    .contacto-texto{
+        font-size:16px;
+        text-align:center;
+        margin:0 auto 30px;
+    }
+
+    .contacto-datos{
+        align-items:center;
+    }
+
+    .contacto-item{
+        font-size:16px;
+    }
+
+    .contacto-card{
+        padding:30px;
+        max-width:100%;
+        text-align:center;
+    }
+
+    /* ===== FOOTER ===== */
+    .copy{
+        margin-top:50px;
+        font-size:12px;
+        text-align:center;
+    }
+
+    /* ===== TITULO DESTACADOS ===== */
+    .titulo-destacados{
+        font-size:26px;
+        text-align:center;
+        margin-top:40px;
+    }
+
+
+}
