@@ -21,14 +21,14 @@
     <a href="javascript:void(0)" class="close-menu" onclick="irInicio()">Inicio</a>
 
     <div class="submenu">
-    <a href="javascript:void(0)" onclick="this.parentElement.classList.toggle('submenu-activo')">
+    <a href="javascript:void(0)" onclick="toggleSubmenu(this)">
     Productos ▾
 </a>
         <div class="submenu-contenido">
-            <a href="javascript:void(0)" onclick="event.stopPropagation(); mostrarProductos('hogar'); cerrarMenuCompleto();">Hogar</a>
-            <a href="javascript:void(0)" onclick="event.stopPropagation(); mostrarProductos('estudiante'); cerrarMenuCompleto()">Estudiante</a>
-            <a href="javascript:void(0)" onclick="event.stopPropagation(); mostrarProductos('repuestos'); cerrarMenuCompleto()">Repuestos</a>
-            <a href="javascript:void(0)" onclick="event.stopPropagation(); mostrarProductos('juguetes'); cerrarMenuCompleto()">Juguetes</a>
+            <a href="javascript:void(0)" onclick="seleccionarCategoria('hogar')">Hogar</a>
+            <a href="javascript:void(0)" onclick="seleccionarCategoria('estudiante')">Estudiante</a>
+            <a href="javascript:void(0)" onclick="seleccionarCategoria('repuestos')">Repuestos</a>
+            <a href="javascript:void(0)" onclick="seleccionarCategoria('juguetes')">Juguetes</a>
         </div>
     </div>
 

@@ -966,3 +966,18 @@ header h1{
 .img-producto:first-child {
     position: relative;
 }
+
+#modal-img{
+    transition: opacity 0.35s ease;
+}
+
+.modal-img-container{
+    background: black;
+    position: relative;
+    overflow: hidden;
+}
+
+#modal-img{
+    background: black;
+    transition: opacity 0.35s ease;
+}

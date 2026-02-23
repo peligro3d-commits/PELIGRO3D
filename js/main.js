@@ -122,15 +122,16 @@ if(imagenes.length > 1){
 
         // ================= CLICK MODAL =================
 
-        div.addEventListener("click", () => {
-            abrirModal(
-                producto.nombre,
-                producto.imagenes,
-                producto.descripcion,
-                producto.precio,
-                producto.codigo
-            );
-        });
+        div.addEventListener("click", (e) => {
+    e.stopPropagation(); // 🔑 CLAVE
+    abrirModal(
+        producto.nombre,
+        producto.imagenes,
+        producto.descripcion,
+        producto.precio,
+        producto.codigo
+    );
+});
 
         contenedor.appendChild(div);
 
@@ -331,50 +332,75 @@ function cerrarMenuCompleto(){
 }
 
 function seleccionarCategoria(categoria){
-
-    mostrarProductos(categoria);
-
-    // Cerrar submenu
-    function seleccionarCategoria(categoria){
     mostrarProductos(categoria);
     cerrarMenuCompleto();
 }
 
-    // Cerrar menu
+document.addEventListener("click", (e) => {
     const menu = document.getElementById("menu");
     const icono = document.getElementById("icono");
 
-    if(menu) menu.classList.remove("abierto");
-    if(icono) icono.classList.remove("abierto");
+    if(
+        !menu.contains(e.target) &&
+        !icono.contains(e.target)
+    ){
+        cerrarMenuCompleto();
+    }
+});
+
+function toggleSubmenu(el){
+    const submenu = el.parentElement;
+
+    // cerrar otros submenus
+    document.querySelectorAll(".submenu").forEach(s => {
+        if(s !== submenu){
+            s.classList.remove("submenu-activo");
+        }
+    });
+
+    // toggle del actual
+    submenu.classList.toggle("submenu-activo");
 }
 
 function cerrarModal(){
-
     const modal = document.getElementById("modal");
-    const wpp = document.getElementById("wppBtn");
+    const wppBtn = document.getElementById("wppBtn");
 
     if(modal){
         modal.style.display = "none";
     }
 
-    if(wpp){
-        wpp.style.display = "flex";
+    if(wppBtn){
+        wppBtn.style.display = "block";
     }
 }
-
 function cambiarImagen(direccion){
 
-    if(imagenesActuales.length <= 1) return;
+    const img = document.getElementById("modal-img");
+    if(!img || imagenesActuales.length === 0) return;
 
-    indiceModal += direccion;
+    // fade out
+    img.style.opacity = "0";
 
-    if(indiceModal < 0){
-        indiceModal = imagenesActuales.length - 1;
-    }
+    setTimeout(() => {
 
-    if(indiceModal >= imagenesActuales.length){
-        indiceModal = 0;
-    }
+        indiceModal += direccion;
 
-    document.getElementById("modal-img").src = imagenesActuales[indiceModal];
+        if(indiceModal < 0){
+            indiceModal = imagenesActuales.length - 1;
+        }
+
+        if(indiceModal >= imagenesActuales.length){
+            indiceModal = 0;
+        }
+
+        img.src = imagenesActuales[indiceModal];
+
+        // fade in
+        img.style.opacity = "0";
+// cambia src
+img.style.opacity = "1";
+        
+
+    }, 95);
 }
