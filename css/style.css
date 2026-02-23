@@ -824,5 +824,12 @@ header h1{
         margin-top:40px;
     }
 
+    /* ===== SUBMENU MOBILE ===== */
+.submenu-activo .submenu-contenido{
+    opacity:1;
+    visibility:visible;
+    transform:translateX(0);
+}
+
 
 }

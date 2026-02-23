@@ -265,3 +265,21 @@ document.querySelectorAll(".close-menu").forEach(link => {
 
 });
 
+function cerrarMenuCompleto(){
+    const menu = document.getElementById("menu");
+    const icono = document.getElementById("icono");
+
+    if(menu){
+        menu.classList.remove("abierto");
+    }
+
+    if(icono){
+        icono.classList.remove("abierto");
+    }
+
+    // 🔑 quitamos clase mobile del submenu
+    const submenus = document.querySelectorAll(".submenu");
+    submenus.forEach(sub => {
+        sub.classList.remove("submenu-activo");
+    });
+}
