@@ -25,10 +25,10 @@
     Productos ▾
 </a>
         <div class="submenu-contenido">
-           <a href="#" onclick="event.stopPropagation(); mostrarProductos('hogar'); cerrarMenuCompleto()">Hogar</a>
-            <a href="#" onclick="event.stopPropagation(); mostrarProductos('estudiante'); cerrarMenuCompleto()">Estudiante</a>
-            <a href="#" onclick="event.stopPropagation(); mostrarProductos('repuestos'); cerrarMenuCompleto()">Repuestos</a>
-            <a href="#" onclick="event.stopPropagation(); mostrarProductos('juguetes'); cerrarMenuCompleto()">Juguetes</a>
+            <a href="javascript:void(0)" onclick="event.stopPropagation(); mostrarProductos('hogar'); cerrarMenuCompleto();">Hogar</a>
+            <a href="javascript:void(0)" onclick="event.stopPropagation(); mostrarProductos('estudiante'); cerrarMenuCompleto()">Estudiante</a>
+            <a href="javascript:void(0)" onclick="event.stopPropagation(); mostrarProductos('repuestos'); cerrarMenuCompleto()">Repuestos</a>
+            <a href="javascript:void(0)" onclick="event.stopPropagation(); mostrarProductos('juguetes'); cerrarMenuCompleto()">Juguetes</a>
         </div>
     </div>
 
@@ -66,17 +66,19 @@
 
         <span class="cerrar" onclick="cerrarModal()">×</span>
 
-        <!-- LADO NEGRO -->
+        <!-- LADO IZQUIERDO -->
         <div class="modal-img-container">
             <img id="modal-img" src="">
+            <button class="modal-btn prev" onclick="cambiarImagen(-1)">❮</button>
+            <button class="modal-btn next" onclick="cambiarImagen(1)">❯</button>
         </div>
 
-        <!-- LADO AMARILLO -->
+        <!-- LADO DERECHO -->
         <div class="modal-info">
             <h2 id="modal-titulo"></h2>
             <p id="modal-precio" class="modal-precio"></p>
-<p id="modal-descripcion" class="modal-descripcion"></p>
-<p id="modal-codigo" class="modal-codigo"></p>
+            <p id="modal-descripcion" class="modal-descripcion"></p>
+            <p id="modal-codigo" class="modal-codigo"></p>
 
             <a href="#" class="btn-whatsapp">
                 <img src="imagenes/wpp-amarillo.png" class="icono-btn">

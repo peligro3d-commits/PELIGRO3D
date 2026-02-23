@@ -1,14 +1,75 @@
 // ================= PRODUCTOS =================
 
 const productos = [
-{nombre:"Soporte Celular", imagen:"imagenes/producto1.png", descripcion:"Ideal para escritorio.", categoria:"hogar", precio:8500, codigo:"0001"},
-{nombre:"Organizador Cocina", imagen:"imagenes/producto2.png", descripcion:"Orden para tu hogar.", categoria:"hogar", precio:12500, codigo:"0002"},
-{nombre:"Lapicero 3D", imagen:"imagenes/producto3.png", descripcion:"Perfecto para estudiantes.", categoria:"estudiante", precio:6000, codigo:"0003"},
-{nombre:"Regla Técnica", imagen:"imagenes/producto4.jpg", descripcion:"Accesorio útil.", categoria:"estudiante", precio:4500, codigo:"0004"},
-{nombre:"Engranaje Repuesto", imagen:"imagenes/producto5.jpg", descripcion:"Repuesto técnico.", categoria:"repuestos", precio:15000, codigo:"0005"},
-{nombre:"Piñón Técnico", imagen:"imagenes/producto6.jpg", descripcion:"Alta resistencia.", categoria:"repuestos", precio:22000, codigo:"0006"},
-{nombre:"Figura Articulada", imagen:"imagenes/producto7.jpg", descripcion:"Juguete impreso en 3D.", categoria:"juguetes", precio:9000, codigo:"0007"},
-{nombre:"Auto Miniatura", imagen:"imagenes/producto8.jpg", descripcion:"Modelo coleccionable.", categoria:"juguetes", precio:11000, codigo:"0008"}
+
+{nombre:"Soporte Celular", imagenes:["imagenes/producto1.png", "imagenes/producto2.png"], descripcion:"Ideal para escritorio.", categoria:"hogar", precio:8500, codigo:"0001", destacado:true},
+
+{nombre:"Organizador Cocina", imagenes:["imagenes/producto23.png","imagenes/producto2b.png"], descripcion:"Orden para tu hogar.", categoria:"hogar", precio:12500, codigo:"0002", destacado:true},
+
+{nombre:"Lapicero 3D", imagenes:["imagenes/producto3.png"], descripcion:"Perfecto para estudiantes.", categoria:"estudiante", precio:6000, codigo:"0003", destacado:true},
+
+{nombre:"Regla Técnica", imagenes:["imagenes/producto4.jpg"], descripcion:"Accesorio útil.", categoria:"estudiante", precio:4500, codigo:"0004"},
+
+{nombre:"Engranaje Repuesto", imagenes:["imagenes/producto5.jpg"], descripcion:"Repuesto técnico.", categoria:"repuestos", precio:15000, codigo:"0005"},
+
+{nombre:"Piñón Técnico", imagenes:["imagenes/producto6.jpg"], descripcion:"Alta resistencia.", categoria:"repuestos", precio:22000, codigo:"0006"},
+
+{nombre:"Figura Articulada", imagenes:["imagenes/producto7.jpg"], descripcion:"Juguete impreso en 3D.", categoria:"juguetes", precio:9000, codigo:"0007"},
+
+{nombre:"Auto Miniatura", imagenes:["imagenes/producto8.jpg"], descripcion:"Modelo coleccionable.", categoria:"juguetes", precio:11000, codigo:"0008"},
+
+{nombre:"Lapicero 3D", imagenes:["imagenes/producto3.png"], descripcion:"Perfecto para estudiantes.", categoria:"estudiante", precio:6000, codigo:"0003", destacado:true},
+
+{nombre:"Regla Técnica", imagenes:["imagenes/producto4.jpg"], descripcion:"Accesorio útil.", categoria:"estudiante", precio:4500, codigo:"0004"},
+
+{nombre:"Engranaje Repuesto", imagenes:["imagenes/producto5.jpg"], descripcion:"Repuesto técnico.", categoria:"repuestos", precio:15000, codigo:"0005"},
+
+{nombre:"Piñón Técnico", imagenes:["imagenes/producto6.jpg"], descripcion:"Alta resistencia.", categoria:"repuestos", precio:22000, codigo:"0006"},
+
+{nombre:"Figura Articulada", imagenes:["imagenes/producto7.jpg"], descripcion:"Juguete impreso en 3D.", categoria:"juguetes", precio:9000, codigo:"0007"},
+
+{nombre:"Auto Miniatura", imagenes:["imagenes/producto8.jpg"], descripcion:"Modelo coleccionable.", categoria:"juguetes", precio:11000, codigo:"0008"},
+
+{nombre:"Regla Técnica", imagenes:["imagenes/producto4.jpg"], descripcion:"Accesorio útil.", categoria:"estudiante", precio:4500, codigo:"0004"},
+
+{nombre:"Engranaje Repuesto", imagenes:["imagenes/producto5.jpg"], descripcion:"Repuesto técnico.", categoria:"repuestos", precio:15000, codigo:"0005"},
+
+{nombre:"Piñón Técnico", imagenes:["imagenes/producto6.jpg"], descripcion:"Alta resistencia.", categoria:"repuestos", precio:22000, codigo:"0006"},
+
+{nombre:"Figura Articulada", imagenes:["imagenes/producto7.jpg"], descripcion:"Juguete impreso en 3D.", categoria:"juguetes", precio:9000, codigo:"0007"},
+
+{nombre:"Regla Técnica", imagenes:["imagenes/producto4.jpg"], descripcion:"Accesorio útil.", categoria:"estudiante", precio:4500, codigo:"0004"},
+
+{nombre:"Engranaje Repuesto", imagenes:["imagenes/producto5.jpg"], descripcion:"Repuesto técnico.", categoria:"repuestos", precio:15000, codigo:"0005"},
+
+{nombre:"Piñón Técnico", imagenes:["imagenes/producto6.jpg"], descripcion:"Alta resistencia.", categoria:"repuestos", precio:22000, codigo:"0006"},
+
+{nombre:"Figura Articulada", imagenes:["imagenes/producto7.jpg"], descripcion:"Juguete impreso en 3D.", categoria:"juguetes", precio:9000, codigo:"0007"},
+
+{nombre:"Regla Técnica", imagenes:["imagenes/producto4.jpg"], descripcion:"Accesorio útil.", categoria:"estudiante", precio:4500, codigo:"0004"},
+
+{nombre:"Engranaje Repuesto", imagenes:["imagenes/producto5.jpg"], descripcion:"Repuesto técnico.", categoria:"repuestos", precio:15000, codigo:"0005"},
+
+{nombre:"Piñón Técnico", imagenes:["imagenes/producto6.jpg"], descripcion:"Alta resistencia.", categoria:"repuestos", precio:22000, codigo:"0006"},
+
+{nombre:"Figura Articulada", imagenes:["imagenes/producto7.jpg"], descripcion:"Juguete impreso en 3D.", categoria:"juguetes", precio:9000, codigo:"0007"},
+
+{nombre:"Regla Técnica", imagenes:["imagenes/producto4.jpg"], descripcion:"Accesorio útil.", categoria:"estudiante", precio:4500, codigo:"0004"},
+
+{nombre:"Engranaje Repuesto", imagenes:["imagenes/producto5.jpg"], descripcion:"Repuesto técnico.", categoria:"repuestos", precio:15000, codigo:"0005"},
+
+{nombre:"Piñón Técnico", imagenes:["imagenes/producto6.jpg"], descripcion:"Alta resistencia.", categoria:"repuestos", precio:22000, codigo:"0006"},
+
+{nombre:"Figura Articulada", imagenes:["imagenes/producto7.jpg"], descripcion:"Juguete impreso en 3D.", categoria:"juguetes", precio:9000, codigo:"0007"},
+
+{nombre:"Regla Técnica", imagenes:["imagenes/producto4.jpg"], descripcion:"Accesorio útil.", categoria:"estudiante", precio:4500, codigo:"0004"},
+
+{nombre:"Engranaje Repuesto", imagenes:["imagenes/producto5.jpg"], descripcion:"Repuesto técnico.", categoria:"repuestos", precio:15000, codigo:"0005"},
+
+{nombre:"Piñón Técnico", imagenes:["imagenes/producto6.jpg"], descripcion:"Alta resistencia.", categoria:"repuestos", precio:22000, codigo:"0006"},
+
+{nombre:"Figura Articulada", imagenes:["imagenes/producto7.jpg"], descripcion:"Juguete impreso en 3D.", categoria:"juguetes", precio:9000, codigo:"0007"},
+
 ];
 
 // ================= MOSTRAR PRODUCTOS =================
@@ -18,50 +79,121 @@ function mostrarProductos(categoria){
     const contenedor = document.getElementById("contenedor-productos");
     const carrusel = document.getElementById("carrusel-container");
     const sobre = document.querySelector(".sobre");
-
     const titulo = document.querySelector(".titulo-destacados");
-const contacto = document.getElementById("contacto");
+    const contacto = document.getElementById("contacto");
 
-if(titulo){
-    titulo.style.display = categoria === "inicio" ? "block" : "none";
-}
+    if(titulo){
+        titulo.style.display = categoria === "inicio" ? "block" : "none";
+    }
 
-if(contacto){
-    contacto.style.display = categoria === "inicio" ? "block" : "none";
-}
+    if(contacto){
+        contacto.style.display = categoria === "inicio" ? "block" : "none";
+    }
 
     if(!contenedor) return;
 
-    // Ocultamos carrusel y sección sobre si NO es inicio
     if(categoria !== "inicio"){
         if(carrusel) carrusel.style.display = "none";
         if(sobre) sobre.style.display = "none";
+    } else {
+        if(carrusel) carrusel.style.display = "block";
+        if(sobre) sobre.style.display = "block";
     }
 
     contenedor.innerHTML = "";
 
-    let filtrados = categoria === "inicio"
-        ? productos
-        : productos.filter(p => p.categoria === categoria);
+    let filtrados;
 
-    filtrados.forEach(producto => {
+    if(categoria === "inicio"){
+        filtrados = productos.filter(p => p.destacado === true).slice(0,4);
+    }else{
+        filtrados = productos.filter(p => p.categoria === categoria);
+    }
+
+    filtrados.forEach((producto, index) => {
 
         const div = document.createElement("div");
         div.className = "producto";
 
-       div.innerHTML = `
-         <img src="${producto.imagen}">
-         <h3>${producto.nombre}</h3>
-         <p class="precio">$ ${producto.precio.toLocaleString()}</p>
-      `;
+        // CREAR IMÁGENES DINÁMICAMENTE (soporta más de 2)
+        let imagenesHTML = "";
+        producto.imagenes.forEach((img, i) => {
+            imagenesHTML += `
+                <img src="${img}" class="img-producto" style="opacity:${i === 0 ? 1 : 0}">
+            `;
+        });
 
-        div.onclick = function(){
-           abrirModal(producto.nombre, producto.imagen, producto.descripcion, producto.precio, producto.codigo);
-      };
-        contenedor.appendChild(div);
+        div.innerHTML = `
+            <div class="img-wrapper">
+                ${imagenesHTML}
+            </div>
+            <h3>${producto.nombre}</h3>
+            <p class="precio">$ ${producto.precio.toLocaleString()}</p>
+        `;
+
+        // ================= HOVER AUTO CAMBIO =================
+
+       const imagenes = div.querySelectorAll(".img-producto");
+
+if(imagenes.length > 1){
+
+    let intervalo = null;
+    let indiceImg = 0;
+
+    div.addEventListener("mouseenter", () => {
+
+    if(intervalo) return;
+
+    const cambiarImagen = () => {
+        const actual = imagenes[indiceImg];
+        const siguiente = imagenes[(indiceImg + 1) % imagenes.length];
+
+        actual.style.opacity = "0";
+        siguiente.style.opacity = "1";
+
+        indiceImg = (indiceImg + 1) % imagenes.length;
+    };
+
+    cambiarImagen(); // 👈 PRIMER CAMBIO INMEDIATO
+
+    intervalo = setInterval(cambiarImagen, 1200);
+});
+
+    div.addEventListener("mouseleave", () => {
+
+        clearInterval(intervalo);
+        intervalo = null;
+
+        imagenes.forEach((img, i) => {
+            img.style.opacity = i === 0 ? "1" : "0";
+        });
+
+        indiceImg = 0;
     });
-
 }
+
+        // ================= CLICK MODAL =================
+
+        div.addEventListener("click", () => {
+            abrirModal(
+                producto.nombre,
+                producto.imagenes,
+                producto.descripcion,
+                producto.precio,
+                producto.codigo
+            );
+        });
+
+        contenedor.appendChild(div);
+
+        // Animación de aparición suave
+        setTimeout(() => {
+            div.classList.add("mostrar");
+        }, 100 * index);
+    });
+}
+
+
 
 // ================= INICIO =================
 
@@ -113,6 +245,8 @@ function toggleMenu(){
 // ================= CARRUSEL =================
 
 let indice = 0;
+let indiceModal = 0;
+let imagenesActuales = [];
 
 function moverCarrusel(direccion){
 
@@ -154,9 +288,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
 // ================= MODAL =================
 
-function abrirModal(nombre, imagen, descripcion, precio, codigo){
+function abrirModal(nombre, imagenes, descripcion, precio, codigo){
 
     document.getElementById("wppBtn").style.display = "none";
+
     const modal = document.getElementById("modal");
     const titulo = document.getElementById("modal-titulo");
     const img = document.getElementById("modal-img");
@@ -168,7 +303,12 @@ function abrirModal(nombre, imagen, descripcion, precio, codigo){
     modal.style.display = "flex";
 
     titulo.innerText = nombre;
-    img.src = imagen;
+
+    imagenesActuales = imagenes;
+    indiceModal = 0;
+
+    img.src = imagenesActuales[0]; // siempre muestra la primera
+
     precioTxt.innerText = `Precio: $ ${precio.toLocaleString()}`;
     desc.innerText = descripcion;
     codigoTxt.innerText = `Código: ${codigo}`;
@@ -176,12 +316,6 @@ function abrirModal(nombre, imagen, descripcion, precio, codigo){
     const telefono = "5493413563549";
     const mensaje = `Hola! Quiero consultar por el producto: ${nombre} - Precio: $${precio}`;
     btn.href = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-}
-
-function cerrarModal(){
-    document.getElementById("wppBtn").style.display = "flex";
-    const modal = document.getElementById("modal");
-    if(modal) modal.style.display = "none";
 }
 
 function actualizarBotonWhatsapp(){
@@ -268,9 +402,11 @@ document.querySelectorAll(".close-menu").forEach(link => {
 });
 
 function cerrarMenuCompleto(){
+
     const menu = document.getElementById("menu");
     const icono = document.getElementById("icono");
 
+    // 🔒 CERRAR MENU
     if(menu){
         menu.classList.remove("abierto");
     }
@@ -279,9 +415,58 @@ function cerrarMenuCompleto(){
         icono.classList.remove("abierto");
     }
 
-    // 🔑 quitamos clase mobile del submenu
+    // 🔒 CERRAR TODOS LOS SUBMENUS
     const submenus = document.querySelectorAll(".submenu");
     submenus.forEach(sub => {
         sub.classList.remove("submenu-activo");
     });
+}
+
+function seleccionarCategoria(categoria){
+
+    mostrarProductos(categoria);
+
+    // Cerrar submenu
+    const submenus = document.querySelectorAll(".submenu");
+    submenus.forEach(sub => {
+        sub.classList.remove("submenu-activo");
+    });
+
+    // Cerrar menu
+    const menu = document.getElementById("menu");
+    const icono = document.getElementById("icono");
+
+    if(menu) menu.classList.remove("abierto");
+    if(icono) icono.classList.remove("abierto");
+}
+
+function cerrarModal(){
+
+    const modal = document.getElementById("modal");
+    const wpp = document.getElementById("wppBtn");
+
+    if(modal){
+        modal.style.display = "none";
+    }
+
+    if(wpp){
+        wpp.style.display = "flex";
+    }
+}
+
+function cambiarImagen(direccion){
+
+    if(imagenesActuales.length <= 1) return;
+
+    indiceModal += direccion;
+
+    if(indiceModal < 0){
+        indiceModal = imagenesActuales.length - 1;
+    }
+
+    if(indiceModal >= imagenesActuales.length){
+        indiceModal = 0;
+    }
+
+    document.getElementById("modal-img").src = imagenesActuales[indiceModal];
 }
