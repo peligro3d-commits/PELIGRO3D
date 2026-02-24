@@ -366,15 +366,6 @@ img.style.opacity = "1";
     }, 95);
 }
 
-document.querySelectorAll("#menu a").forEach(link => {
-
-    // excluir el que abre el submenu
-    if(link.textContent.includes("Productos")) return;
-
-    link.addEventListener("click", () => {
-        cerrarMenuCompleto();
-    });
-});
 
 function toggleSubmenu(el){
 
