@@ -1,22 +1,114 @@
 // ================= PRODUCTOS =================
 
 const productos = [
+//p1
+{nombre:"Portalapices McDonal's", imagenes:["imagenes/p1.png"], descripcion:"Ideal para escritorio.", categoria:"estudiante", precio:5000, codigo:"0001", destacado:true},
+//p2
+{nombre:"Portalapices Campera", imagenes:["imagenes/p2.png", "imagenes/p2a.png"], descripcion:"Orden para tu hogar.", categoria:"estudiante", precio:13000, codigo:"0002", destacado:true},
+//p3
+{nombre:"Soporte para cables", imagenes:["imagenes/p3.png", "imagenes/p3a.png", "imagenes/p3b.png", "imagenes/p3c.png"], descripcion:"Perfecto para estudiantes.", categoria:"hogar", precio:3500, codigo:"0003", destacado:true},
+//p4
+{nombre:"Mano esqueletica", imagenes:["imagenes/p4.png", "imagenes/p4a.png"], descripcion:"Accesorio útil.", categoria:"hogar", precio:9000, codigo:"0004"},
+//p5
+//{nombre:"Organizador de escritorio", imagenes:["imagenes/p5.png"], descripcion:"Repuesto técnico.", categoria:"estudiante", precio:15000, codigo:"0005"},
+//p6
+{nombre:"Lapicero Malboro", imagenes:["imagenes/p6.png", "imagenes/p6a.png"], descripcion:"Alta resistencia.", categoria:"estudiante", precio:16000, codigo:"0006"},
+//p7
+{nombre:"Ganchos de corazón x10u", imagenes:["imagenes/p7.png", "imagenes/p7a.png", "imagenes/p7b.png"], descripcion:"Juguete impreso en 3D.", categoria:"estudiante", precio:4000, codigo:"0007"},
+//p8
+{nombre:"Cesto de basura Basketball", imagenes:["imagenes/p8.png", "imagenes/p8a.png", "imagenes/p8b.png"], descripcion:"Modelo coleccionable.", categoria:"hogar", precio:27000, codigo:"0008"},
+//p9
+{nombre:"Soporte de notas adhesivas", imagenes:["imagenes/p9.png", "imagenes/p9a.png", "imagenes/p9b.png"], descripcion:"Ideal para escritorio.", categoria:"estudiante", precio:8500, codigo:"0009"},
+//p10
+{nombre:"Maceta David", imagenes:["imagenes/p10.png", "imagenes/p10a.png"], descripcion:"Orden para tu hogar.", categoria:"jardin", precio:10000, codigo:"0010"},
+//p11
+{nombre:"Pala jardinería", imagenes:["imagenes/p11.png"], descripcion:"Perfecto para estudiantes.", categoria:"jardin", precio:10000, codigo:"0011"},
+//p12
+{nombre:"Maceta ornamental", imagenes:["imagenes/p12.png", "imagenes/p12a.png"], descripcion:"Accesorio útil.", categoria:"jardin", precio:13000, codigo:"0012"},
+//13
+{nombre:"Maceta bolson", imagenes:["imagenes/p13.png", "imagenes/p13a.png"], descripcion:"Repuesto técnico.", categoria:"jardin", precio:8000, codigo:"0013"},
+//14
+{nombre:"Stencil para café", imagenes:["imagenes/p14.png"], descripcion:"Alta resistencia.", categoria:"hogar", precio:18500, codigo:"0014"},
+//15
+{nombre:"Ganchos para plantas x5", imagenes:["imagenes/p15.png", "imagenes/p15a.png"], descripcion:"Juguete impreso en 3D.", categoria:"jardin", precio:9000, codigo:"0015"},
+//16
+{nombre:"Maceta Nike", imagenes:["imagenes/p16.png", "imagenes/p16a.png"], descripcion:"Modelo coleccionable.", categoria:"jardin", precio:15000, codigo:"0016"},
+//p17
+{nombre:"Ganchos de cocina x10", imagenes:["imagenes/p17.png", "imagenes/p17a.png"], descripcion:"Juguete impreso en 3D.", categoria:"hogar", precio:8000, codigo:"0017"},
+//p18
+{nombre:"Maceta griega", imagenes:["imagenes/p18.png", "imagenes/p18a.png"], descripcion:"Modelo coleccionable.", categoria:"jardin", precio:16000, codigo:"0018"},
+//p19
+{nombre:"LLavero Copa del mundo", imagenes:["imagenes/p19.png", "imagenes/p19a.png"], descripcion:"Orden para tu hogar.", categoria:"llavero", precio:0, codigo:"0019"},
+//p20
+{nombre:"LLavero pokebola", imagenes:["imagenes/p20.png", "imagenes/p20a.png"], descripcion:"Ideal para escritorio.", categoria:"llavero", precio:0, codigo:"0020"},
+//p21
+{nombre:"LLavero de pastillas", imagenes:["imagenes/p21.png", "imagenes/p21a.png"], descripcion:"Perfecto para estudiantes.", categoria:"llavero", precio:0, codigo:"0011"},
+//p22
+{nombre:"LLavero vaso GYM", imagenes:["imagenes/p22.png", "imagenes/p22a.png"], descripcion:"Accesorio útil.", categoria:"llavero", precio:0, codigo:"0022"},
+//23
+{nombre:"Llavero pesas", imagenes:["imagenes/p23.png"], descripcion:"Repuesto técnico.", categoria:"llavero", precio:0, codigo:"0023"},
+//24
+{nombre:"Llavero perro de globo", imagenes:["imagenes/p24.png", "imagenes/p24a.png"], descripcion:"Alta resistencia.", categoria:"llavero", precio:0, codigo:"0024"},
+//25
+{nombre:"Cuenco apilable", imagenes:["imagenes/p25.png", "imagenes/p25a.png"], descripcion:"Juguete impreso en 3D.", categoria:"hogar", precio:23000, codigo:"0025"},
+//26
+{nombre:"Llavero Monsters, INC", imagenes:["imagenes/p26.png", "imagenes/p26a.png"], descripcion:"Modelo coleccionable.", categoria:"llavero", precio:0, codigo:"0026"},
+//p27
+{nombre:"Soporte auriculares", imagenes:["imagenes/p27.png", "imagenes/p27a.png"], descripcion:"Juguete impreso en 3D.", categoria:"game", precio:18000, codigo:"0027"},
+//p28
+{nombre:"Soporte mando pulpo", imagenes:["imagenes/p28.png", "imagenes/p28a.png"], descripcion:"Modelo coleccionable.", categoria:"game", precio:8000, codigo:"0028"},
+//p29
+{nombre:"Soporte mando serpiente ", imagenes:["imagenes/p29.png", "imagenes/p29a.png"], descripcion:"Ideal para escritorio.", categoria:"game", precio:32000, codigo:"0029"},
+//p30
+{nombre:"Soporte auriculares griego", imagenes:["imagenes/p30.png", "imagenes/p30a.png"], descripcion:"Ideal para escritorio.", categoria:"game", precio:24000, codigo:"0030"},
+//31
+{nombre:"Soporte mando colchon", imagenes:["imagenes/p31.png", "imagenes/p31a.png"], descripcion:"Ideal para escritorio.", categoria:"game", precio:20000, codigo:"0031"},
+//p32
+//{nombre:"Portalapices Campera", imagenes:["imagenes/p2.png", "imagenes/p2a.png"], descripcion:"Orden para tu hogar.", categoria:"estudiante", precio:12500, codigo:"0002"},
+//p33
+//{nombre:"Soporte para cables", imagenes:["imagenes/p3.png", "imagenes/p3a.png"], descripcion:"Perfecto para estudiantes.", categoria:"hogar", precio:6000, codigo:"0003"},
+//p34
+//{nombre:"Mano esqueletica", imagenes:["imagenes/p4.png", "imagenes/p4a.png"], descripcion:"Accesorio útil.", categoria:"hogar", precio:4500, codigo:"0004"},
+//p35
+//{nombre:"Organizador de escritorio", imagenes:["imagenes/p5.png"], descripcion:"Repuesto técnico.", categoria:"estudiante", precio:15000, codigo:"0005"},
+//p36
+//{nombre:"Lapicero Malboro", imagenes:["imagenes/p6.png", "imagenes/p6a.png"], descripcion:"Alta resistencia.", categoria:"estudiante", precio:22000, codigo:"0006"},
+//p37
+//{nombre:"Ganchos de corazón", imagenes:["imagenes/p7.png", "imagenes/p7a.png", "imagenes/p7b.png"], descripcion:"Juguete impreso en 3D.", categoria:"estudiante", precio:9000, codigo:"0007"},
+//p38
+//{nombre:"Cesto de basura Basketball", imagenes:["imagenes/p8.png", "imagenes/p8a.png", "imagenes/p8b.png"], descripcion:"Modelo coleccionable.", categoria:"hogar", precio:11000, codigo:"0008"},
+//p39
+//{nombre:"Soporte de notas adhesivas", imagenes:["imagenes/p9.png", "imagenes/p9a.png", "imagenes/p9b.png"], descripcion:"Ideal para escritorio.", categoria:"estudiante", precio:8500, codigo:"0009"},
 
-{nombre:"Soporte Celular", imagenes:["imagenes/producto1.png", "imagenes/producto2.png"], descripcion:"Ideal para escritorio.", categoria:"hogar", precio:8500, codigo:"0001", destacado:true},
 
-{nombre:"Organizador Cocina", imagenes:["imagenes/producto23.png","imagenes/producto2b.png"], descripcion:"Orden para tu hogar.", categoria:"hogar", precio:12500, codigo:"0002", destacado:true},
 
-{nombre:"Lapicero 3D", imagenes:["imagenes/producto3.png"], descripcion:"Perfecto para estudiantes.", categoria:"estudiante", precio:6000, codigo:"0003", destacado:true},
 
-{nombre:"Regla Técnica", imagenes:["imagenes/producto4.jpg"], descripcion:"Accesorio útil.", categoria:"estudiante", precio:4500, codigo:"0004"},
 
-{nombre:"Engranaje Repuesto", imagenes:["imagenes/producto5.jpg"], descripcion:"Repuesto técnico.", categoria:"repuestos", precio:15000, codigo:"0005"},
 
-{nombre:"Piñón Técnico", imagenes:["imagenes/producto6.jpg"], descripcion:"Alta resistencia.", categoria:"repuestos", precio:22000, codigo:"0006"},
 
-{nombre:"Figura Articulada", imagenes:["imagenes/producto7.jpg"], descripcion:"Juguete impreso en 3D.", categoria:"juguetes", precio:9000, codigo:"0007"},
 
-{nombre:"Auto Miniatura", imagenes:["imagenes/producto8.jpg"], descripcion:"Modelo coleccionable.", categoria:"juguetes", precio:11000, codigo:"0008"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ];
 
