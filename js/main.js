@@ -303,7 +303,6 @@ function cerrarMenuCompleto(){
     const menu = document.getElementById("menu");
     const icono = document.getElementById("icono");
 
-    // 🔒 CERRAR MENU
     if(menu){
         menu.classList.remove("abierto");
     }
@@ -312,45 +311,16 @@ function cerrarMenuCompleto(){
         icono.classList.remove("abierto");
     }
 
-    // 🔒 CERRAR TODOS LOS SUBMENUS
-    const submenus = document.querySelectorAll(".submenu");
-    submenus.forEach(sub => {
+    // cerrar submenus
+    document.querySelectorAll(".submenu").forEach(sub => {
         sub.classList.remove("submenu-activo");
     });
+
 }
 
 function seleccionarCategoria(categoria){
     mostrarProductos(categoria);
     cerrarMenuCompleto();
-}
-
-document.addEventListener("click", (e) => {
-    const menu = document.getElementById("menu");
-    const icono = document.getElementById("icono");
-
-    if(menu && icono && 
-       !menu.contains(e.target) &&
-       !icono.contains(e.target)
-    ){
-        cerrarMenuCompleto();
-    }
-});
-
-function toggleSubmenu(el, event){
-
-    event.stopPropagation(); // 🔥 evita que el click llegue al document
-
-    const submenu = el.parentElement;
-
-    // cerrar otros submenus
-    document.querySelectorAll(".submenu").forEach(s => {
-        if(s !== submenu){
-            s.classList.remove("submenu-activo");
-        }
-    });
-
-    // toggle del actual
-    submenu.classList.toggle("submenu-activo");
 }
 
 function cerrarModal(){
@@ -405,3 +375,10 @@ document.querySelectorAll("#menu a").forEach(link => {
         cerrarMenuCompleto();
     });
 });
+
+function toggleSubmenu(el){
+
+    const submenu = el.parentElement;
+    submenu.classList.toggle("submenu-activo");
+
+}
