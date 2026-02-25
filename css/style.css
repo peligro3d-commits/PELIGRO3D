@@ -83,12 +83,6 @@ body{
     flex-direction:column;
 }
 
-.submenu-contenido{
-    display:none;
-    flex-direction:column;
-    background:#111;
-}
-
 .submenu-contenido a{
     padding:12px 20px;
     font-size:14px;
@@ -105,9 +99,12 @@ body{
     color:black;
 }
 
-/* se activa con JS */
-.submenu-activo .submenu-contenido{
-    display:flex;
+
+/* ===== HOVER SOLO EN DESKTOP ===== */
+@media (min-width: 769px){
+
+
+
 }
 /* ===== HEADER ===== */
 
@@ -214,21 +211,19 @@ header h1{
 .img-wrapper{
     position:relative;
     width:100%;
-    height:200px;
+    aspect-ratio:1/1; /* mantiene proporción cuadrada adaptable */
     overflow:hidden;
     border-radius:12px;
 }
 
 .img-producto{
     position:absolute;
+    inset:0;
     width:100%;
     height:100%;
     object-fit:cover;
-    top:0;
-    left:0;
     transition: opacity 0.35s ease-in-out;
 }
-
 .img-producto:first-child{
     position:relative;
 }
@@ -392,8 +387,10 @@ header h1{
 }
 
 .wpp-flotante img{
-    width:60%;
-    height:auto;
+    width:28px;
+    height:28px;
+    object-fit:contain;
+    display:block;
 }
 
 .wpp-flotante:hover{
@@ -753,10 +750,6 @@ header h1{
     box-shadow:0 15px 35px rgba(0,0,0,0.4);
 }
 
-    .producto img{
-        height:140px;
-    }
-
     .producto h3{
         font-size:16px;
     }
@@ -922,7 +915,7 @@ header h1{
 }
 
 .img-producto {
-    transition: opacity 0.1s ease-in-out;
+    transition: opacity 0.5s ease-in-out;  /*tiempo te transicion entre imagenes en productos */
 }
 
 .img-producto.fade {
@@ -940,23 +933,6 @@ header h1{
     transform: translateY(0);
 }
 
-.img-wrapper {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.img-producto {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-    transition: opacity 0.4s ease-in-out;
-}
-
-.img-producto:first-child {
-    position: relative;
-}
 
 #modal-img{
     transition: opacity 0.35s ease;
@@ -971,4 +947,27 @@ header h1{
 #modal-img{
     background: black;
     transition: opacity 0.35s ease;
+}
+
+.submenu-contenido{
+    display:flex;
+    flex-direction:column;
+    background:#111;
+
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    transform:translateY(-5px);
+
+    transition:
+        max-height 0.35s ease,
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+/* ACTIVADO POR CLICK */
+.submenu-activo .submenu-contenido{
+    max-height:500px; /* suficiente para tus items */
+    opacity:1;
+    transform:translateY(0);
 }
