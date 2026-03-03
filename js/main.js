@@ -1,5 +1,5 @@
-// ================= PRODUCTOS =================
-
+// ================= JS =================
+let categoriaActual = "inicio";
 const productos = [
 //p1
 {nombre:"Portalapices McDonal's", imagenes:["imagenes/p1.png"], descripcion:"Ideal para escritorio.", categoria:"estudiante", precio:5000, codigo:"0001", destacado:true},
@@ -64,35 +64,39 @@ const productos = [
 //31
 {nombre:"Soporte mando colchon", imagenes:["imagenes/p31.png", "imagenes/p31a.png"], descripcion:"Ideal para escritorio.", categoria:"game", precio:20000, codigo:"0031"},
 //p32
-//{nombre:"Portalapices Campera", imagenes:["imagenes/p2.png", "imagenes/p2a.png"], descripcion:"Orden para tu hogar.", categoria:"estudiante", precio:12500, codigo:"0002"},
+{nombre:"muñeco articulado", imagenes:["imagenes/p32.png", "imagenes/p32a.png"], descripcion:"Orden para tu hogar.", categoria:"juguete", precio:6500, codigo:"0032"},
 //p33
-//{nombre:"Soporte para cables", imagenes:["imagenes/p3.png", "imagenes/p3a.png"], descripcion:"Perfecto para estudiantes.", categoria:"hogar", precio:6000, codigo:"0003"},
+{nombre:"Avión F18", imagenes:["imagenes/p33.png", "imagenes/p33a.png"], descripcion:"Perfecto para estudiantes.", categoria:"juguete", precio:6000, codigo:"0033"},
 //p34
-//{nombre:"Mano esqueletica", imagenes:["imagenes/p4.png", "imagenes/p4a.png"], descripcion:"Accesorio útil.", categoria:"hogar", precio:4500, codigo:"0004"},
+{nombre:"Nave Star Wars", imagenes:["imagenes/p34.png", "imagenes/p34a.png"], descripcion:"Accesorio útil.", categoria:"juguete", precio:4500, codigo:"0034"},
 //p35
-//{nombre:"Organizador de escritorio", imagenes:["imagenes/p5.png"], descripcion:"Repuesto técnico.", categoria:"estudiante", precio:15000, codigo:"0005"},
+{nombre:"Organizador de escritorio", imagenes:["imagenes/p5.png"], descripcion:"Repuesto técnico.", categoria:"estudiante", precio:15000, codigo:"0035"},
 //p36
-//{nombre:"Lapicero Malboro", imagenes:["imagenes/p6.png", "imagenes/p6a.png"], descripcion:"Alta resistencia.", categoria:"estudiante", precio:22000, codigo:"0006"},
+{nombre:"Lapicero Malboro", imagenes:["imagenes/p6.png", "imagenes/p6a.png"], descripcion:"Alta resistencia.", categoria:"estudiante", precio:22000, codigo:"0036"},
 //p37
-//{nombre:"Ganchos de corazón", imagenes:["imagenes/p7.png", "imagenes/p7a.png", "imagenes/p7b.png"], descripcion:"Juguete impreso en 3D.", categoria:"estudiante", precio:9000, codigo:"0007"},
+{nombre:"Ganchos de corazón", imagenes:["imagenes/p7.png", "imagenes/p7a.png", "imagenes/p7b.png"], descripcion:"Juguete impreso en 3D.", categoria:"estudiante", precio:9000, codigo:"0037"},
 //p38
-//{nombre:"Cesto de basura Basketball", imagenes:["imagenes/p8.png", "imagenes/p8a.png", "imagenes/p8b.png"], descripcion:"Modelo coleccionable.", categoria:"hogar", precio:11000, codigo:"0008"},
+{nombre:"Cesto de basura Basketball", imagenes:["imagenes/p8.png", "imagenes/p8a.png", "imagenes/p8b.png"], descripcion:"Modelo coleccionable.", categoria:"hogar", precio:11000, codigo:"0038"},
 //p39
-//{nombre:"Soporte de notas adhesivas", imagenes:["imagenes/p9.png", "imagenes/p9a.png", "imagenes/p9b.png"], descripcion:"Ideal para escritorio.", categoria:"estudiante", precio:8500, codigo:"0009"},
-
-
+{nombre:"Soporte de notas adhesivas", imagenes:["imagenes/p9.png", "imagenes/p9a.png", "imagenes/p9b.png"], descripcion:"Ideal para escritorio.", categoria:"estudiante", precio:8500, codigo:"0039"},
 
 ];
 
 // ================= MOSTRAR PRODUCTOS =================
 
-function mostrarProductos(categoria){
+function mostrarProductos(categoria, desdeHistorial = false){
 
+    categoriaActual = categoria;
     const contenedor = document.getElementById("contenedor-productos");
     const carrusel = document.getElementById("carrusel-container");
     const sobre = document.querySelector(".sobre");
     const titulo = document.querySelector(".titulo-destacados");
     const contacto = document.getElementById("contacto");
+
+    // Solo agregamos historial si NO viene del botón atrás
+    if(!desdeHistorial){
+        history.pushState({ categoria: categoria }, "");
+    }
 
     if(titulo){
         titulo.style.display = categoria === "inicio" ? "block" : "none";
@@ -234,7 +238,7 @@ function toggleMenu(){
         cerrarMenuCompleto();
     }else{
         menu.classList.add("abierto");
-        icono.classList.add("abierto");
+        icono.classList.add("activo");
     }
 }
 
@@ -266,6 +270,12 @@ document.addEventListener("DOMContentLoaded", function(){
 
     irInicio();
 
+    const menuIcon = document.querySelector(".menu-icon");
+    menuIcon.classList.add("fondo-amarillo");
+
+    history.replaceState({ categoria: "inicio" }, "");
+    categoriaActual = "inicio";
+
     const menu = document.getElementById("menu");
     const icono = document.getElementById("icono");
 
@@ -290,6 +300,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
 function abrirModal(nombre, imagenes, descripcion, precio, codigo){
 
+    history.pushState(
+    { modal: true, categoria: categoriaActual },
+    ""
+    );
     document.getElementById("wppBtn").style.display = "none";
 
     const modal = document.getElementById("modal");
@@ -359,22 +373,6 @@ function irContacto(){
     }, 200);
 }
 
-window.addEventListener("scroll", function(){
-
-    const icono = document.getElementById("icono");
-    const header = document.querySelector("header");
-
-    if(!icono || !header) return;
-
-    const headerBottom = header.getBoundingClientRect().bottom;
-
-    // Si el header ya no está visible → fondo negro
-    if(headerBottom <= 0){
-        icono.classList.add("scrolled");
-    }else{
-        icono.classList.remove("scrolled");
-    }
-});
 
 document.querySelectorAll(".close-menu").forEach(link => {
 
@@ -394,7 +392,7 @@ function cerrarMenuCompleto(){
     }
 
     if(icono){
-        icono.classList.remove("abierto");
+        icono.classList.remove("activo");
     }
 
     // cerrar submenus
@@ -410,6 +408,7 @@ function seleccionarCategoria(categoria){
 }
 
 function cerrarModal(){
+
     const modal = document.getElementById("modal");
     const wppBtn = document.getElementById("wppBtn");
 
@@ -420,6 +419,20 @@ function cerrarModal(){
     if(wppBtn){
         wppBtn.style.display = "block";
     }
+
+}function cerrarModal(){
+
+    const modal = document.getElementById("modal");
+    const wppBtn = document.getElementById("wppBtn");
+
+    if(modal){
+        modal.style.display = "none";
+    }
+
+    if(wppBtn){
+        wppBtn.style.display = "block";
+    }
+
 }
 function cambiarImagen(direccion){
 
@@ -471,3 +484,41 @@ function toggleSubmenu(el){
     }
 
 }
+
+window.addEventListener("popstate", function(event){
+
+    const modal = document.getElementById("modal");
+
+    // 1️⃣ Si el modal está abierto → cerrarlo
+    if(modal && modal.style.display === "flex"){
+        cerrarModal();
+        return;
+    }
+
+    // 2️⃣ Si hay estado de categoría → cargarla sin agregar historial
+    if(event.state && event.state.categoria){
+        mostrarProductos(event.state.categoria, true);
+    }
+
+});
+
+window.addEventListener("scroll", function(){
+
+    const menu = document.getElementById("menu");
+    const menuIcon = document.querySelector(".menu-icon");
+
+    // 🔥 SI EL MENU ESTA ABIERTO NO CAMBIAMOS NADA
+    if(menu.classList.contains("abierto")) return;
+
+    const header = document.querySelector("header");
+    const headerHeight = header.offsetHeight;
+
+    if(window.scrollY < headerHeight - 20){
+        menuIcon.classList.add("fondo-amarillo");
+        menuIcon.classList.remove("fondo-negro");
+    }else{
+        menuIcon.classList.add("fondo-negro");
+        menuIcon.classList.remove("fondo-amarillo");
+    }
+
+});
