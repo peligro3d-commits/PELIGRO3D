@@ -1,5 +1,6 @@
 // ================= JS =================
 let categoriaActual = "inicio";
+let productoAbierto = false;
 const productos = [
 //p1
 {nombre:"Portalapices McDonal's", imagenes:["imagenes/p1.png"], descripcion:"Ideal para escritorio.", categoria:"estudiante", precio:5000, codigo:"0001", destacado:true},
@@ -300,12 +301,24 @@ document.addEventListener("DOMContentLoaded", function(){
 
 function abrirModal(nombre, imagenes, descripcion, precio, codigo){
 
-    history.pushState(
-    { modal: true, categoria: categoriaActual },
-    ""
-    );
-    document.getElementById("wppBtn").style.display = "none";
+    // 🔥 CONTROL INTELIGENTE DEL HISTORIAL
+    if(productoAbierto){
+        history.replaceState(
+            { modal: true, categoria: categoriaActual },
+            ""
+        );
+    } else {
+        history.pushState(
+            { modal: true, categoria: categoriaActual },
+            ""
+        );
+        productoAbierto = true;
+    }
 
+    document.getElementById("wppBtn").style.display = "none";
+    document.querySelector(".menu-icon").classList.add("menu-icon-disabled");
+    document.getElementById("wppBtn").style.display = "none";
+    document.querySelector(".menu-icon").classList.add("menu-icon-disabled");
     const modal = document.getElementById("modal");
     const titulo = document.getElementById("modal-titulo");
     const img = document.getElementById("modal-img");
@@ -407,10 +420,12 @@ function seleccionarCategoria(categoria){
     cerrarMenuCompleto();
 }
 
-function cerrarModal(){
+
+function cerrarModal(desdeHistorial = false){
 
     const modal = document.getElementById("modal");
     const wppBtn = document.getElementById("wppBtn");
+    const menuIcon = document.querySelector(".menu-icon");
 
     if(modal){
         modal.style.display = "none";
@@ -420,19 +435,16 @@ function cerrarModal(){
         wppBtn.style.display = "block";
     }
 
-}function cerrarModal(){
-
-    const modal = document.getElementById("modal");
-    const wppBtn = document.getElementById("wppBtn");
-
-    if(modal){
-        modal.style.display = "none";
+    if(menuIcon){
+        menuIcon.classList.remove("menu-icon-disabled");
     }
 
-    if(wppBtn){
-        wppBtn.style.display = "block";
-    }
+    productoAbierto = false;
 
+    // 🔥 CLAVE
+    if(!desdeHistorial){
+        history.back();
+    }
 }
 function cambiarImagen(direccion){
 
@@ -489,15 +501,21 @@ window.addEventListener("popstate", function(event){
 
     const modal = document.getElementById("modal");
 
-    // 1️⃣ Si el modal está abierto → cerrarlo
+    // 🔥 Si el modal está abierto → solo cerrarlo
     if(modal && modal.style.display === "flex"){
-        cerrarModal();
+        cerrarModal(true);
         return;
     }
 
-    // 2️⃣ Si hay estado de categoría → cargarla sin agregar historial
+    // 🔥 Si NO hay modal abierto y hay categoría nueva
     if(event.state && event.state.categoria){
-        mostrarProductos(event.state.categoria, true);
+
+        // Solo cambiar categoría si es distinta
+        if(event.state.categoria !== categoriaActual){
+            mostrarProductos(event.state.categoria, true);
+        }
+
+        productoAbierto = false;
     }
 
 });
