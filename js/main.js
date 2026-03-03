@@ -224,8 +224,8 @@ function irInicio(){
     if(sobre) sobre.style.display = "block";
 
     mostrarProductos("inicio");
+    animarSobre();
 }
-
 // ================= MENU =================
 
 function toggleMenu(){
@@ -540,3 +540,33 @@ window.addEventListener("scroll", function(){
     }
 
 });
+
+function animarSobre(){
+    const flecha = document.querySelector(".sobre-deco");
+    const texto = document.querySelector(".sobre-texto");
+
+    // Reset flecha
+    flecha.classList.remove("animar");
+    void flecha.offsetWidth;
+    flecha.classList.add("animar");
+
+    // Reset texto
+    texto.classList.remove("animar-texto");
+    void texto.offsetWidth;
+    texto.classList.add("animar-texto");
+
+    window.addEventListener("load", () => {
+    animarHeader();
+    animarSobre();
+});
+}
+
+window.addEventListener("load", animarFlecha);
+
+function animarHeader(){
+    const header = document.querySelector("header");
+
+    header.classList.remove("header-animar");
+    void header.offsetWidth;
+    header.classList.add("header-animar");
+}
