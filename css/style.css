@@ -735,6 +735,10 @@ header h1{
         right:12px;
     }
 
+    .menu-icon{
+        top:45px; /* centrado con el header de 90px en mobile */
+    }
+
     /* CARRUSEL */
     .carrusel-container{
         width:95%;
@@ -801,6 +805,7 @@ header h1{
         grid-template-areas:
             "titulo"
             "descripcion"
+            "tamano"
             "codigo"
             "precio"
             "boton";
