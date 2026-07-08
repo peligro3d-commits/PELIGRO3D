@@ -61,7 +61,7 @@ body{
 .menu-icon{
     position:fixed;   /* 👈 ahora depende del header */
     left:20px;
-    top: 60px;;
+    top:60px;
     transform:translateY(-50%);
     width:50px;
     height:50px;
@@ -74,6 +74,15 @@ body{
     cursor:pointer;
     z-index:3000;
     transition:all 0.3s ease;
+    background: black; /* estado normal (sobre fondo amarillo) */
+}
+
+.menu-icon div{
+    width:22px;
+    height:3px;
+    border-radius:2px;
+    transition:all 0.3s ease;
+    background: #FFD400; /* estado normal */
 }
 
 /* Estado fondo amarillo */
@@ -92,22 +101,6 @@ body{
 
 .menu-icon.fondo-negro div{
     background:black;
-}
-
-.menu-icon div{
-    width:22px;
-    height:3px;
-    border-radius:2px;
-    transition:all 0.3s ease;
-}
-
-/* Estado normal (sobre fondo amarillo) */
-.menu-icon{
-    background: black;
-}
-
-.menu-icon div{
-    background: #FFD400;
 }
 
 /* 🔥 Cuando el menú está abierto */
@@ -142,13 +135,6 @@ body{
     color:black;
 }
 
-
-/* ===== HOVER SOLO EN DESKTOP ===== */
-@media (min-width: 769px){
-
-
-
-}
 /* ===== HEADER ===== */
 
 header{
@@ -486,13 +472,20 @@ header h1{
     color:black;
     display:grid;
     grid-template-areas:
-    "titulo titulo"
-    "descripcion descripcion"
-    "codigo codigo"
-    ". ."
-    "precio boton";
+        "titulo titulo"
+        "descripcion descripcion"
+        "tamano tamano"
+        "codigo codigo"
+        ". ."
+        "precio boton";
     grid-template-columns: 1fr auto;
-    gap:2px 20px;
+    gap:8px 20px;
+}
+
+.modal-tamano{
+    grid-area:tamano;
+    font-size:15px;
+    font-weight:600;
 }
 
 /* TITULO */
@@ -602,6 +595,7 @@ header h1{
     grid-area:codigo;
     font-size:13px;
     opacity:0.6;
+    margin-top:10px;   /* 👈 lo baja */
 }
 
 
@@ -927,20 +921,8 @@ header h1{
 
 }
 
-/* ===== WHATSAPP OCULTO CUANDO HAY MODAL ===== */
-.whatsapp-hidden{
-    opacity:0;
-    pointer-events:none;
-    transform:scale(0.8);
-    transition:0.3s ease;
-}
-
 .img-producto {
     transition: opacity 0.5s ease-in-out;  /*tiempo te transicion entre imagenes en productos */
-}
-
-.img-producto.fade {
-    opacity: 0;
 }
 
 .producto {
@@ -1154,6 +1136,14 @@ header h1{
 .titulo-seccion{
     font-size:26px;
 }
+
+.sobre-deco{
+        display:none;
+    }
+
+ .sobre-contenedor{
+        justify-content:center;
+    }
 
 }
 

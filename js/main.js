@@ -3,84 +3,118 @@ let categoriaActual = "inicio";
 let productoAbierto = false;
 const productos = [
 //p1
-{nombre:"Portalapices McDonal's", imagenes:["imagenes/p1.png"], descripcion:"Ideal para escritorio.", categoria:"estudiante", precio:5000, codigo:"0001", destacado:true},
-//p2
-{nombre:"Portalapices Campera", imagenes:["imagenes/p2.png", "imagenes/p2a.png"], descripcion:"Orden para tu hogar.", categoria:"estudiante", precio:13000, codigo:"0002", destacado:true},
-//p3
-{nombre:"Soporte para cables", imagenes:["imagenes/p3.png", "imagenes/p3a.png", "imagenes/p3b.png", "imagenes/p3c.png"], descripcion:"Perfecto para estudiantes.", categoria:"hogar", precio:3500, codigo:"0003", destacado:true},
-//p4
-{nombre:"Mano esqueletica", imagenes:["imagenes/p4.png", "imagenes/p4a.png"], descripcion:"Accesorio útil.", categoria:"hogar", precio:9000, codigo:"0004"},
-//p5
-//{nombre:"Organizador de escritorio", imagenes:["imagenes/p5.png"], descripcion:"Repuesto técnico.", categoria:"estudiante", precio:15000, codigo:"0005"},
-//p6
-{nombre:"Lapicero Malboro", imagenes:["imagenes/p6.png", "imagenes/p6a.png"], descripcion:"Alta resistencia.", categoria:"estudiante", precio:16000, codigo:"0006"},
-//p7
-{nombre:"Ganchos de corazón x10u", imagenes:["imagenes/p7.png", "imagenes/p7a.png", "imagenes/p7b.png"], descripcion:"Juguete impreso en 3D.", categoria:"estudiante", precio:4000, codigo:"0007"},
-//p8
-{nombre:"Cesto de basura Basketball", imagenes:["imagenes/p8.png", "imagenes/p8a.png", "imagenes/p8b.png"], descripcion:"Modelo coleccionable.", categoria:"hogar", precio:27000, codigo:"0008"},
-//p9
-{nombre:"Soporte de notas adhesivas", imagenes:["imagenes/p9.png", "imagenes/p9a.png", "imagenes/p9b.png"], descripcion:"Ideal para escritorio.", categoria:"estudiante", precio:8500, codigo:"0009"},
-//p10
-{nombre:"Maceta David", imagenes:["imagenes/p10.png", "imagenes/p10a.png"], descripcion:"Orden para tu hogar.", categoria:"jardin", precio:10000, codigo:"0010"},
-//p11
-{nombre:"Pala jardinería", imagenes:["imagenes/p11.png"], descripcion:"Perfecto para estudiantes.", categoria:"jardin", precio:10000, codigo:"0011"},
-//p12
-{nombre:"Maceta ornamental", imagenes:["imagenes/p12.png", "imagenes/p12a.png"], descripcion:"Accesorio útil.", categoria:"jardin", precio:13000, codigo:"0012"},
-//13
-{nombre:"Maceta bolson", imagenes:["imagenes/p13.png", "imagenes/p13a.png"], descripcion:"Repuesto técnico.", categoria:"jardin", precio:8000, codigo:"0013"},
-//14
-{nombre:"Stencil para café", imagenes:["imagenes/p14.png"], descripcion:"Alta resistencia.", categoria:"hogar", precio:18500, codigo:"0014"},
-//15
-{nombre:"Ganchos para plantas x5", imagenes:["imagenes/p15.png", "imagenes/p15a.png"], descripcion:"Juguete impreso en 3D.", categoria:"jardin", precio:9000, codigo:"0015"},
-//16
-{nombre:"Maceta Nike", imagenes:["imagenes/p16.png", "imagenes/p16a.png"], descripcion:"Modelo coleccionable.", categoria:"jardin", precio:15000, codigo:"0016"},
-//p17
-{nombre:"Ganchos de cocina x10", imagenes:["imagenes/p17.png", "imagenes/p17a.png"], descripcion:"Juguete impreso en 3D.", categoria:"hogar", precio:8000, codigo:"0017"},
-//p18
-{nombre:"Maceta griega", imagenes:["imagenes/p18.png", "imagenes/p18a.png"], descripcion:"Modelo coleccionable.", categoria:"jardin", precio:16000, codigo:"0018"},
-//p19
-{nombre:"LLavero Copa del mundo", imagenes:["imagenes/p19.png", "imagenes/p19a.png"], descripcion:"Orden para tu hogar.", categoria:"llavero", precio:0, codigo:"0019"},
-//p20
-{nombre:"LLavero pokebola", imagenes:["imagenes/p20.png", "imagenes/p20a.png"], descripcion:"Ideal para escritorio.", categoria:"llavero", precio:0, codigo:"0020"},
-//p21
-{nombre:"LLavero de pastillas", imagenes:["imagenes/p21.png", "imagenes/p21a.png"], descripcion:"Perfecto para estudiantes.", categoria:"llavero", precio:0, codigo:"0011"},
-//p22
-{nombre:"LLavero vaso GYM", imagenes:["imagenes/p22.png", "imagenes/p22a.png"], descripcion:"Accesorio útil.", categoria:"llavero", precio:0, codigo:"0022"},
-//23
-{nombre:"Llavero pesas", imagenes:["imagenes/p23.png"], descripcion:"Repuesto técnico.", categoria:"llavero", precio:0, codigo:"0023"},
-//24
-{nombre:"Llavero perro de globo", imagenes:["imagenes/p24.png", "imagenes/p24a.png"], descripcion:"Alta resistencia.", categoria:"llavero", precio:0, codigo:"0024"},
-//25
-{nombre:"Cuenco apilable", imagenes:["imagenes/p25.png", "imagenes/p25a.png"], descripcion:"Juguete impreso en 3D.", categoria:"hogar", precio:23000, codigo:"0025"},
-//26
-{nombre:"Llavero Monsters, INC", imagenes:["imagenes/p26.png", "imagenes/p26a.png"], descripcion:"Modelo coleccionable.", categoria:"llavero", precio:0, codigo:"0026"},
-//p27
-{nombre:"Soporte auriculares", imagenes:["imagenes/p27.png", "imagenes/p27a.png"], descripcion:"Juguete impreso en 3D.", categoria:"game", precio:18000, codigo:"0027"},
-//p28
-{nombre:"Soporte mando pulpo", imagenes:["imagenes/p28.png", "imagenes/p28a.png"], descripcion:"Modelo coleccionable.", categoria:"game", precio:8000, codigo:"0028"},
-//p29
-{nombre:"Soporte mando serpiente ", imagenes:["imagenes/p29.png", "imagenes/p29a.png"], descripcion:"Ideal para escritorio.", categoria:"game", precio:32000, codigo:"0029"},
-//p30
-{nombre:"Soporte auriculares griego", imagenes:["imagenes/p30.png", "imagenes/p30a.png"], descripcion:"Ideal para escritorio.", categoria:"game", precio:24000, codigo:"0030"},
-//31
-{nombre:"Soporte mando colchon", imagenes:["imagenes/p31.png", "imagenes/p31a.png"], descripcion:"Ideal para escritorio.", categoria:"game", precio:20000, codigo:"0031"},
-//p32
-{nombre:"muñeco articulado", imagenes:["imagenes/p32.png", "imagenes/p32a.png"], descripcion:"Orden para tu hogar.", categoria:"juguete", precio:6500, codigo:"0032"},
-//p33
-{nombre:"Avión F18", imagenes:["imagenes/p33.png", "imagenes/p33a.png"], descripcion:"Perfecto para estudiantes.", categoria:"juguete", precio:6000, codigo:"0033"},
-//p34
-{nombre:"Nave Star Wars", imagenes:["imagenes/p34.png", "imagenes/p34a.png"], descripcion:"Accesorio útil.", categoria:"juguete", precio:4500, codigo:"0034"},
-//p35
-{nombre:"Organizador de escritorio", imagenes:["imagenes/p5.png"], descripcion:"Repuesto técnico.", categoria:"estudiante", precio:15000, codigo:"0035"},
-//p36
-{nombre:"Lapicero Malboro", imagenes:["imagenes/p6.png", "imagenes/p6a.png"], descripcion:"Alta resistencia.", categoria:"estudiante", precio:22000, codigo:"0036"},
-//p37
-{nombre:"Ganchos de corazón", imagenes:["imagenes/p7.png", "imagenes/p7a.png", "imagenes/p7b.png"], descripcion:"Juguete impreso en 3D.", categoria:"estudiante", precio:9000, codigo:"0037"},
-//p38
-{nombre:"Cesto de basura Basketball", imagenes:["imagenes/p8.png", "imagenes/p8a.png", "imagenes/p8b.png"], descripcion:"Modelo coleccionable.", categoria:"hogar", precio:11000, codigo:"0038"},
-//p39
-{nombre:"Soporte de notas adhesivas", imagenes:["imagenes/p9.png", "imagenes/p9a.png", "imagenes/p9b.png"], descripcion:"Ideal para escritorio.", categoria:"estudiante", precio:8500, codigo:"0039"},
+{nombre:"Portalapices McDonal's", imagenes:["imagenes/p1.png"], descripcion:"Diseño icónico adaptado a tu escritorio. Funcional y con presencia.", categoria:"estudiante", precio:5000, codigo:"0001",tamano:"12cm x 8cm x 10cm", destacado:true},
 
+//p2
+{nombre:"Portalapices Campera", imagenes:["imagenes/p2.png", "imagenes/p2a.png"], descripcion:"Un diseño distinto que convierte el orden en parte de la decoración.", categoria:"estudiante", precio:13000, codigo:"0002",tamano:"15cm x 10cm x 12cm", destacado:true},
+
+//p3
+{nombre:"Soporte para cables", imagenes:["imagenes/p3.png", "imagenes/p3a.png", "imagenes/p3b.png", "imagenes/p3c.png"], descripcion:"Organiza y fija tus cables con una solución simple y eficiente.", categoria:"hogar", precio:3500, codigo:"0003",tamano:"20cm x 15cm x 5cm", destacado:true},
+
+//p4
+{nombre:"Mano esqueletica", imagenes:["imagenes/p4.png", "imagenes/p4a.png"], descripcion:"Pieza decorativa con carácter, ideal para destacar cualquier espacio.", categoria:"hogar", precio:9000, codigo:"0004", tamano:"12cm x 8cm x 10cm"},
+
+//p6
+{nombre:"Lapicero Malboro", imagenes:["imagenes/p6.png", "imagenes/p6a.png"], descripcion:"Estética fuerte y diseño compacto para un escritorio con actitud.", categoria:"estudiante", precio:16000, codigo:"0006", tamano:"10cm x 5cm x 5cm"},
+
+//p7
+{nombre:"Ganchos de corazón x10u", imagenes:["imagenes/p7.png", "imagenes/p7a.png", "imagenes/p7b.png"], descripcion:"Prácticos y resistentes, con un diseño que suma detalle al ambiente.", categoria:"estudiante", precio:4000, codigo:"0007", tamano:"15cm x 10cm x 2cm"},
+
+//p8
+{nombre:"Cesto de basura Basketball", imagenes:["imagenes/p8.png", "imagenes/p8a.png", "imagenes/p8b.png"], descripcion:"Funcionalidad con estilo deportivo para espacios dinámicos.", categoria:"hogar", precio:27000, codigo:"0008", tamano:"25cm x 20cm x 15cm"},
+
+//p9
+{nombre:"Soporte de notas adhesivas", imagenes:["imagenes/p9.png", "imagenes/p9a.png", "imagenes/p9b.png"], descripcion:"Mantén tus recordatorios visibles y organizados.", categoria:"estudiante", precio:8500, codigo:"0009", tamano:"12cm x 8cm x 10cm"},
+
+//p10
+{nombre:"Maceta David", imagenes:["imagenes/p10.png", "imagenes/p10a.png"], descripcion:"Clásico reinterpretado en impresión 3D para tus plantas.", categoria:"jardin", precio:10000, codigo:"0010", tamano:"15cm x 10cm x 12cm"},
+
+//p11
+{nombre:"Pala jardinería", imagenes:["imagenes/p11.png"], descripcion:"Ligera, resistente y lista para el trabajo diario.", categoria:"jardin", precio:10000, codigo:"0011", tamano:"20cm x 15cm x 5cm"},
+
+//p12
+{nombre:"Maceta ornamental", imagenes:["imagenes/p12.png", "imagenes/p12a.png"], descripcion:"Diseño decorativo que realza cualquier rincón verde.", categoria:"jardin", precio:13000, codigo:"0012", tamano:"18cm x 12cm x 8cm"},
+
+//p13
+{nombre:"Maceta bolson", imagenes:["imagenes/p13.png", "imagenes/p13a.png"], descripcion:"Amplia y firme, ideal para plantas con mayor crecimiento.", categoria:"jardin", precio:8000, codigo:"0013", tamano:"25cm x 20cm x 15cm"},
+
+//p14
+{nombre:"Stencil para café", imagenes:["imagenes/p14.png"], descripcion:"Añade un acabado profesional a cada taza.", categoria:"hogar", precio:18500, codigo:"0014", tamano:"12cm x 8cm x 10cm"},
+
+//p15
+{nombre:"Ganchos para plantas x5", imagenes:["imagenes/p15.png", "imagenes/p15a.png"], descripcion:"Soporte firme y discreto para ordenar tu jardín.", categoria:"jardin", precio:9000, codigo:"0015", tamano:"15cm x 10cm x 2cm"},
+
+//p16
+{nombre:"Maceta Nike", imagenes:["imagenes/p16.png", "imagenes/p16a.png"], descripcion:"Diseño moderno que combina naturaleza y estilo urbano.", categoria:"jardin", precio:15000, codigo:"0016", tamano:"18cm x 12cm x 8cm"},
+
+//p17
+{nombre:"Ganchos de cocina x10", imagenes:["imagenes/p17.png", "imagenes/p17a.png"], descripcion:"Solución práctica para mantener todo en su lugar.", categoria:"hogar", precio:8000, codigo:"0017", tamano:"15cm x 10cm x 2cm"},
+
+//p18
+{nombre:"Maceta griega", imagenes:["imagenes/p18.png", "imagenes/p18a.png"], descripcion:"Inspiración clásica con terminación moderna en 3D.", categoria:"jardin", precio:16000, codigo:"0018", tamano:"18cm x 12cm x 8cm"},
+
+//p19
+{nombre:"LLavero Copa del mundo", imagenes:["imagenes/p19.png", "imagenes/p19a.png"], descripcion:"Detalle compacto para llevar la pasión siempre contigo.", categoria:"llavero", precio:0, codigo:"0019", tamano:"5cm x 3cm x 3cm"},
+
+//p20
+{nombre:"LLavero pokebola", imagenes:["imagenes/p20.png", "imagenes/p20a.png"], descripcion:"Diseño reconocible al instante, ideal para fans.", categoria:"llavero", precio:0, codigo:"0020", tamano:"5cm x 3cm x 3cm"},
+
+//p21
+{nombre:"LLavero de pastillas", imagenes:["imagenes/p21.png", "imagenes/p21a.png"], descripcion:"Pequeño, funcional y pensado para el día a día.", categoria:"llavero", precio:0, codigo:"0021", tamano:"5cm x 3cm x 3cm"},
+
+//p22
+{nombre:"LLavero vaso GYM", imagenes:["imagenes/p22.png", "imagenes/p22a.png"], descripcion:"Accesorio ligero con identidad fitness.", categoria:"llavero", precio:0, codigo:"0022", tamano:"5cm x 3cm x 3cm"},
+
+//p23
+{nombre:"Llavero pesas", imagenes:["imagenes/p23.png"], descripcion:"Detalle minimalista para quienes viven el entrenamiento.", categoria:"llavero", precio:0, codigo:"0023", tamano:"12cm x 8cm x 10cm"},
+
+//p24
+{nombre:"Llavero perro de globo", imagenes:["imagenes/p24.png", "imagenes/p24a.png"], descripcion:"Diseño llamativo con acabado sólido y resistente.", categoria:"llavero", precio:0, codigo:"0024", tamano:"5cm x 3cm x 3cm"},
+
+//p25
+{nombre:"Cuenco apilable", imagenes:["imagenes/p25.png", "imagenes/p25a.png"], descripcion:"Optimiza espacio sin perder diseño.", categoria:"hogar", precio:23000, codigo:"0025", tamano:"15cm x 10cm x 2cm"},
+
+//p26
+{nombre:"Llavero Monsters, INC", imagenes:["imagenes/p26.png", "imagenes/p26a.png"], descripcion:"Un toque nostálgico en formato compacto.", categoria:"llavero", precio:0, codigo:"0026", tamano:"5cm x 3cm x 3cm"},
+
+//p27
+{nombre:"Soporte auriculares", imagenes:["imagenes/p27.png", "imagenes/p27a.png"], descripcion:"Mantén tu setup ordenado con soporte firme y estable.", categoria:"game", precio:18000, codigo:"0027", tamano:"20cm x 15cm x 5cm"},
+
+//p28
+{nombre:"Soporte mando pulpo", imagenes:["imagenes/p28.png", "imagenes/p28a.png"], descripcion:"Diseño creativo que sostiene y decora al mismo tiempo.", categoria:"game", precio:8000, codigo:"0028", tamano:"15cm x 10cm x 5cm"},
+
+//p29
+{nombre:"Soporte mando serpiente ", imagenes:["imagenes/p29.png", "imagenes/p29a.png"], descripcion:"Estructura robusta con presencia única en tu escritorio.", categoria:"game", precio:32000, codigo:"0029", tamano:"20cm x 15cm x 5cm"},
+
+//p30
+{nombre:"Soporte auriculares griego", imagenes:["imagenes/p30.png", "imagenes/p30a.png"], descripcion:"Inspiración clásica aplicada a un setup moderno.", categoria:"game", precio:24000, codigo:"0030", tamano:"20cm x 15cm x 5cm"},
+
+//p31
+{nombre:"Soporte mando colchon", imagenes:["imagenes/p31.png", "imagenes/p31a.png"], descripcion:"Base estable y cómoda para proteger tu control.", categoria:"game", precio:20000, codigo:"0031", tamano:"15cm x 10cm x 5cm"},
+
+//p32
+{nombre:"muñeco articulado", imagenes:["imagenes/p32.png", "imagenes/p32a.png"], descripcion:"Figura flexible ideal para colección o exhibición.", categoria:"juguete", precio:6500, codigo:"0032", tamano:"20cm x 15cm x 5cm"},
+
+//p33
+{nombre:"Avión F18", imagenes:["imagenes/p33.png", "imagenes/p33a.png"], descripcion:"Modelo detallado pensado para amantes de la aviación.", categoria:"juguete", precio:6000, codigo:"0033", tamano:"15cm x 10cm x 5cm"},
+
+//p34
+{nombre:"Nave Star Wars", imagenes:["imagenes/p34.png", "imagenes/p34a.png"], descripcion:"Diseño icónico reinterpretado en impresión 3D.", categoria:"juguete", precio:4500, codigo:"0034", tamano:"15cm x 10cm x 5cm"},
+
+//p35
+{nombre:"Organizador de escritorio", imagenes:["imagenes/p5.png"], descripcion:"Espacio optimizado para mantener todo en orden.", categoria:"estudiante", precio:15000, codigo:"0035", tamano:"20cm x 15cm x 10cm"},
+
+//p36
+{nombre:"Lapicero Malboro", imagenes:["imagenes/p6.png", "imagenes/p6a.png"], descripcion:"Diseño imponente con mayor presencia y acabado sólido.", categoria:"estudiante", precio:22000, codigo:"0036", tamano:"10cm x 5cm x 5cm"},
+
+//p37
+{nombre:"Ganchos de corazón", imagenes:["imagenes/p7.png", "imagenes/p7a.png", "imagenes/p7b.png"], descripcion:"Prácticos y resistentes, con un detalle distintivo.", categoria:"estudiante", precio:9000, codigo:"0037", tamano:"15cm x 10cm x 5cm"},
+
+//p38
+{nombre:"Cesto de basura Basketball", imagenes:["imagenes/p8.png", "imagenes/p8a.png", "imagenes/p8b.png"], descripcion:"Versión más compacta sin perder estilo deportivo.", categoria:"hogar", precio:11000, codigo:"0038", tamano:"20cm x 15cm x 10cm"},
+
+//p39
+{nombre:"Soporte de notas adhesivas", imagenes:["imagenes/p9.png", "imagenes/p9a.png", "imagenes/p9b.png"], descripcion:"Organización simple con diseño funcional.", categoria:"estudiante", precio:8500, codigo:"0039", tamano:"15cm x 10cm x 5cm"},
 ];
 
 // ================= MOSTRAR PRODUCTOS =================
@@ -191,14 +225,15 @@ if(imagenes.length > 1){
 
         // ================= CLICK MODAL =================
 
-        div.addEventListener("click", (e) => {
-    e.stopPropagation(); // 🔑 CLAVE
+       div.addEventListener("click", (e) => {
+    e.stopPropagation();
     abrirModal(
         producto.nombre,
         producto.imagenes,
         producto.descripcion,
         producto.precio,
-        producto.codigo
+        producto.codigo,
+        producto.tamano   
     );
 });
 
@@ -299,9 +334,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
 // ================= MODAL =================
 
-function abrirModal(nombre, imagenes, descripcion, precio, codigo){
+function abrirModal(nombre, imagenes, descripcion, precio, codigo, tamano){
 
-    // 🔥 CONTROL INTELIGENTE DEL HISTORIAL
     if(productoAbierto){
         history.replaceState(
             { modal: true, categoria: categoriaActual },
@@ -317,14 +351,14 @@ function abrirModal(nombre, imagenes, descripcion, precio, codigo){
 
     document.getElementById("wppBtn").style.display = "none";
     document.querySelector(".menu-icon").classList.add("menu-icon-disabled");
-    document.getElementById("wppBtn").style.display = "none";
-    document.querySelector(".menu-icon").classList.add("menu-icon-disabled");
+
     const modal = document.getElementById("modal");
     const titulo = document.getElementById("modal-titulo");
     const img = document.getElementById("modal-img");
     const precioTxt = document.getElementById("modal-precio");
     const desc = document.getElementById("modal-descripcion");
     const codigoTxt = document.getElementById("modal-codigo");
+    const tamanoTxt = document.getElementById("modal-tamano");
     const btn = document.querySelector(".btn-whatsapp");
 
     modal.style.display = "flex";
@@ -333,12 +367,17 @@ function abrirModal(nombre, imagenes, descripcion, precio, codigo){
 
     imagenesActuales = imagenes;
     indiceModal = 0;
-
-    img.src = imagenesActuales[0]; // siempre muestra la primera
+    img.src = imagenesActuales[0];
 
     precioTxt.innerText = `Precio: $ ${precio.toLocaleString()}`;
     desc.innerText = descripcion;
     codigoTxt.innerText = `Código: ${codigo}`;
+
+    if(tamano){
+        tamanoTxt.innerText = `Tamaño: ${tamano}`;
+    } else {
+        tamanoTxt.innerText = "";
+    }
 
     const telefono = "5493413563549";
     const mensaje = `Hola! Quiero consultar por el producto: ${nombre} - Precio: $${precio}`;
@@ -469,10 +508,7 @@ function cambiarImagen(direccion){
         img.src = imagenesActuales[indiceModal];
 
         // fade in
-        img.style.opacity = "0";
-// cambia src
-img.style.opacity = "1";
-        
+        img.style.opacity = "1";
 
     }, 95);
 }
@@ -560,8 +596,6 @@ function animarSobre(){
     animarSobre();
 });
 }
-
-window.addEventListener("load", animarFlecha);
 
 function animarHeader(){
     const header = document.querySelector("header");
